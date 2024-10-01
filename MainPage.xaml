@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_work.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Spacing="25"
+            Padding="30,0"
+            VerticalOptions="Center">
+
+            <Image
+                Source="mainpage.jpg"
+                MaximumHeightRequest="100"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="NewGameBtn"
+                Text="New Game"
+                Clicked="NewGameBtn_Clicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="StatsBtn"
+                Text="Leaderboard"
+                Clicked="StatsBtn_Clicked"
+                HorizontalOptions="Center" />
+
+            <Button
+                x:Name="QuitBtn"
+                Text="Quit Game"
+                Clicked="QuitBtn_Clicked"
+                HorizontalOptions="Center" />
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_work.NewPlayerPage"
+             Title="New Player">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label             
+                Text="First Name:" 
+                HorizontalOptions="Center"
+                FontSize="Medium"/>
+
+            <Entry
+                x:Name="PlayerFirstNameEntry"
+                MaxLength="20"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Completed="PlayerFirstNameEntry_Completed"/>
+
+            <Label 
+                Text="Last Name:" 
+                HorizontalOptions="Center"
+                FontSize="Medium"/>
+
+            <Entry
+                x:Name="PlayerLastNameEntry"
+                MaxLength="20"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                Completed="PlayerLastNameEntry_Completed"/>
+
+            <Label 
+                Text="Birth Year:" 
+                HorizontalOptions="Center"
+                FontSize="Medium"/>
+
+            <Entry
+                x:Name="PlayerBirthYearEntry"
+                WidthRequest="200"
+                HorizontalOptions="Center"
+                MaxLength="4"
+                Keyboard="Numeric"
+                Completed="PlayerBirthYearEntry_Completed"/>
+
+            <Button
+                x:Name="SaveNewPlayerNameBtn"
+                Text="Save"
+                Clicked="SaveNewPlayerNameBtn_Clicked"
+                HorizontalOptions="Center"/>
+
+            <Button
+                x:Name="CancelNewPlayerNameBtn"
+                Text="Cancel"
+                Clicked="CancelNewPlayerNameBtn_Clicked"
+                HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

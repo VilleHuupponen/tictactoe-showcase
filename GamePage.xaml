@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_work.GamePage"
+             Title="Tic-Tac-Toe">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Grid
+            HorizontalOptions="Center">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Label
+                    Text="Game Duration:"
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Margin="10"/>
+
+                <Label
+                    x:Name="TimerLabel"
+                    Text=""
+                    FontSize="Large"
+                    HorizontalOptions="Center"
+                    Grid.Column="1"
+                    Margin="10"/>
+            </Grid>
+
+            <Label
+                x:Name="PlayerX"
+                Text="Player X"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+
+            <Label 
+                x:Name="PlayerXNameLabel"
+                Text="?"
+                FontSize="Medium"
+                HorizontalOptions="Center"/>
+
+            <Grid
+                x:Name="GridButtons"
+                HorizontalOptions="Center">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Image Source="game.jpg"/>
+
+                <Grid 
+                    Grid.Row="0" 
+                    Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="*" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Button 
+                        x:Name="Button00Btn"
+                        ImageSource="empty.png"
+                        Grid.Row="0" 
+                        Grid.Column="0" 
+                        Clicked="Button_Clicked"
+                        BackgroundColor="Transparent"
+                        Margin="2"/>
+
+                    <Button 
+                        x:Name="Button01Btn"
+                        ImageSource="empty.png"
+                        Grid.Row="0" 
+                        Grid.Column="1" 
+                        Clicked="Button_Clicked"
+                        BackgroundColor="Transparent"
+                        Margin="2"/>
+
+                    <Button 
+                        x:Name="Button02Btn"
+                        ImageSource="empty.png"
+                        Grid.Row="0" 
+                        Grid.Column="2"
+                        Clicked="Button_Clicked"
+                        BackgroundColor="Transparent"
+                        Margin="2"/>
+
+                    <Button 
+                        x:Name="Button10Btn"
+                        ImageSource="empty.png"
+                        Grid.Row="1" 
+                        Grid.Column="0" 
+                        Clicked="Button_Clicked"
+                        BackgroundColor="Transparent"
+                        Margin="2"/>
+
+                    <Button 
+                        x:Name="Button11Btn" 
+                        ImageSource="empty.png"
+                        Grid.Row="1" 
+                        Grid.Column="1" 
+                        Clicked="Button_Clicked"
+                        BackgroundColor="Transparent"
+                        Margin="2"/>
+
+                    <Button 
+                        x:Name="Button12Btn" 
+                        ImageSource="empty.png"
+                        Grid.Row="1" 
+                        Grid.Column="2" 
+                        Clicked="Button_Clicked"
+                        BackgroundColor="Transparent"
+                        Margin="2"/>
+
+                    <Button 
+                        x:Name="Button20Btn"
+                        ImageSource="empty.png"
+                        Grid.Row="2" 
+                        Grid.Column="0" 
+                        Clicked="Button_Clicked"
+                        BackgroundColor="Transparent"
+                        Margin="2"/>
+
+                    <Button 
+                        x:Name="Button21Btn" 
+                        ImageSource="empty.png"
+                        Grid.Row="2"
+                        Grid.Column="1" 
+                        Clicked="Button_Clicked"
+                        BackgroundColor="Transparent"
+                        Margin="2"/>
+
+                    <Button 
+                        x:Name="Button22Btn"
+                        ImageSource="empty.png"
+                        Grid.Row="2" 
+                        Grid.Column="2" 
+                        Clicked="Button_Clicked"
+                        BackgroundColor="Transparent"
+                        Margin="2"/>
+                </Grid>
+            </Grid>
+
+            <Label
+                x:Name="PlayerO"
+                Text="Player O"
+                FontSize="Large"
+                HorizontalOptions="Center"/>
+
+            <Label 
+                x:Name="PlayerONameLabel"
+                Text="?"
+                FontSize="Medium"
+                HorizontalOptions="Center"/>
+
+            <Button
+                x:Name="RestartBtn"
+                Text="Restart Game"
+                Clicked="RestartBtn_Clicked"
+                HorizontalOptions="Center"/>
+
+            <Button 
+                x:Name="Quit"
+                Text="Quit"
+                Clicked="QuitBtn_Clicked"
+                HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

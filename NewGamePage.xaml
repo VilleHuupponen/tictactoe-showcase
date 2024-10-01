@@ -1,0 +1,339 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="final_work.NewGamePage"
+             Title="New Game">
+    <ScrollView>
+        <VerticalStackLayout>
+            <Label 
+                FontSize="Header"
+                Text="Choose players"
+                HorizontalOptions="Center"/>
+
+            <Label 
+                Text="Player X:"
+                FontSize="Medium"
+                HorizontalOptions="Center"/>
+
+            <Label
+                x:Name="PlayerXName"
+                FontSize="Medium"
+                HorizontalOptions="Center"/>
+
+            <Border
+                Stroke="MediumBlue"
+                StrokeShape="RoundRectangle 5,5,5,5"
+                StrokeThickness="2"
+                Grid.Row="1"
+                Grid.ColumnSpan="4"
+                Margin="10">
+
+                <ListView                   
+                    x:Name="PlayerXLV"
+                    ItemsSource="{Binding Player}"
+                    ItemSelected="PlayerXLV_ItemSelected">
+                    <ListView.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label  
+                                Text="First Name:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="1"
+                                Text="Last Name:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="2"
+                                Text="Age:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="3"
+                                Text="Wins:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="4"
+                                Text="Losses:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="5"
+                                Text="Draws:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="6"
+                                Text="Total playtime:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <BoxView
+                                Grid.Row="1"
+                                Grid.ColumnSpan="7"
+                                Color="MediumBlue"
+                                HeightRequest="2"/>
+
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label
+                                            Grid.Column="0"                                     
+                                            Text="{Binding sFirstName}" 
+                                            FontAttributes="Bold"
+                                            Margin="10"/>
+
+                                    <Label 
+                                            Grid.Column="1" 
+                                            Text="{Binding sLastName}" 
+                                            FontAttributes="Bold"
+                                            Margin="10"/>
+
+                                    <Label 
+                                            Grid.Column="2" 
+                                            Text="{Binding iAgeNow}" 
+                                            FontAttributes="Bold" 
+                                            Margin="10"/>
+
+                                    <Label
+                                            Grid.Column="3" 
+                                            Text="{Binding iWins}" 
+                                            FontAttributes="Bold" 
+                                            Margin="10"/>
+
+                                    <Label
+                                            Grid.Column="4" 
+                                            Text="{Binding iLosses}" 
+                                            FontAttributes="Bold" 
+                                            Margin="10"/>
+
+                                    <Label
+                                            Grid.Column="5" 
+                                            Text="{Binding iDraws}" 
+                                            FontAttributes="Bold" 
+                                            Margin="10"/>
+
+                                    <Label
+                                            Grid.Column="6" 
+                                            Text="{Binding GetTimeString}" 
+                                            FontAttributes="Bold" 
+                                            Margin="10"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+
+            <Button
+                x:Name="NewPlayerBtn"
+                Text="New Player"
+                HorizontalOptions="Center"
+                Clicked="NewPlayerBtn_Clicked"/>
+
+            <Label
+                Text="Player O:"
+                FontSize="Medium"
+                HorizontalOptions="Center"/>
+
+            <Label
+                x:Name="PlayerOName"
+                FontSize="Medium"
+                HorizontalOptions="Center"/>
+
+            <Border 
+                Stroke="MediumBlue"
+                StrokeShape="RoundRectangle 5,5,5,5"
+                StrokeThickness="2"
+                Grid.Row="1"
+                Grid.ColumnSpan="4"
+                Margin="10">
+
+                <ListView
+                        x:Name="PlayerOLV"
+                        ItemsSource="{Binding Player}"
+                        ItemSelected="PlayerOLV_ItemSelected">
+                    <ListView.Header>
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+
+                            <Label                                
+                                Text="First Name:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="1"
+                                Text="Last Name:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="2"
+                                Text="Age:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="3"
+                                Text="Wins:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="4"
+                                Text="Losses:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="5"
+                                Text="Draws:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <Label
+                                Grid.Column="6"
+                                Text="Duration of Gameplay:"
+                                FontAttributes="Bold"
+                                Margin="10"/>
+
+                            <BoxView
+                                Grid.Row="1"
+                                Grid.ColumnSpan="7"
+                                Color="MediumBlue"
+                                HeightRequest="2"/>
+
+                        </Grid>
+                    </ListView.Header>
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="Auto"/>
+                                    </Grid.RowDefinitions>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                    </Grid.ColumnDefinitions>
+
+                                    <Label
+                                            Grid.Column="0" 
+                                            Text="{Binding sFirstName}" 
+                                            FontAttributes="Bold"
+                                            Margin="10"/>
+
+                                    <Label
+                                            Grid.Column="1" 
+                                            Text="{Binding sLastName}" 
+                                            FontAttributes="Bold"
+                                            Margin="10"/>
+
+                                    <Label 
+                                            Grid.Column="2" 
+                                            Text="{Binding iAgeNow}" 
+                                            FontAttributes="Bold" 
+                                            Margin="10"/>
+
+                                    <Label 
+                                            Grid.Column="3" 
+                                            Text="{Binding iWins}" 
+                                            FontAttributes="Bold"
+                                            Margin="10"/>
+
+                                    <Label 
+                                            Grid.Column="4" 
+                                            Text="{Binding iLosses}" 
+                                            FontAttributes="Bold"
+                                            Margin="10"/>
+
+                                    <Label 
+                                            Grid.Column="5" 
+                                            Text="{Binding iDraws}" 
+                                            FontAttributes="Bold"
+                                            Margin="10"/>
+
+                                    <Label 
+                                            Grid.Column="6" 
+                                            Text="{Binding GetTimeString}" 
+                                            FontAttributes="Bold"
+                                            Margin="10"/>
+                                </Grid>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Border>
+
+
+            <Button
+                x:Name="StartBtn"
+                Text="Start Game"
+                Clicked="StartBtn_Clicked"
+                HorizontalOptions="Center"/>
+
+            <Button
+                x:Name="BackBtn"
+                Text="Back"
+                Clicked="BackBtn_Clicked"
+                HorizontalOptions="Center"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
